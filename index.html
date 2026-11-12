@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra do Sol</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="astrolabe-container" id="astrolabeContainer">
+        <header class="header">
+            <h1 class="title">Cifra do Sol</h1>
+            <p class="subtitle">Não olhe para ele.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Relógio de Sol / Mecanismo Astronômico -->
+            <div class="mechanism-wrapper">
+                <div class="sun-clock" id="sunClock">
+                    <!-- Raios do Sol (Starburst) -->
+                    <div class="starburst-rays"></div>
+
+                    <!-- Círculo Externo: Símbolos Solares SVG -->
+                    <div class="disk outer-disk" id="outerDisk">
+                        <div class="disk-ring"></div>
+                    </div>
+
+                    <!-- Círculo Intermediário: Alfabeto das Sombras -->
+                    <div class="disk middle-disk" id="middleDisk">
+                        <div class="disk-ring"></div>
+                    </div>
+
+                    <!-- Círculo Interno: Alfabeto da Luz -->
+                    <div class="disk inner-disk" id="innerDisk">
+                        <div class="disk-ring"></div>
+                    </div>
+
+                    <!-- Eixo Central e Ponteiro -->
+                    <div class="central-axis">
+                        <div class="axis-pin"></div>
+                        <div class="sun-pointer" id="sunPointer"></div>
+                    </div>
+                </div>
+                <p class="clock-hint" id="clockHint">Dica: Não olhe para Ele.</p>
+            </div>
+
+            <!-- Painel de Controle e Operação -->
+            <section class="control-panel">
+                <div class="mode-selector">
+                    <button type="button" class="mode-btn active" data-mode="encrypt">Cifrar</button>
+                    <button type="button" class="mode-btn" data-mode="decrypt">Decifrar</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputText">Mensagem de Entrada</label>
+                    <textarea id="inputText" placeholder="Digite sua mensagem aqui..."></textarea>
+                    <div class="svg-preview-bar hidden" id="inputSvgPreview"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="keyword">Palavra-Chave</label>
+                        <input type="text" id="keyword" value="SOL" placeholder="Ex: SOL">
+                    </div>
+                    <div class="form-group">
+                        <label for="solPos">Posição Inicial do Sol (1-26)</label>
+                        <input type="number" id="solPos" min="1" max="26" value="1">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="btn primary-btn" id="runBtn">Executar Transformação</button>
+                    <button type="button" class="btn secondary-btn" id="invertBtn" title="Inverter resultado para entrada">Inverter</button>
+                    <button type="button" class="btn secondary-btn" id="clearBtn">Limpar</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Resultado da Cifra</label>
+                    <div class="output-display" id="outputDisplay">
+                        <span class="placeholder-text">O resultado aparecerá aqui...</span>
+                    </div>
+                    <textarea id="outputRaw" class="sr-only" readonly></textarea>
+                    <button type="button" class="btn copy-btn" id="copyBtn">Copiar</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; Cifra do Sol &mdash; Não olhe para Ele.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
