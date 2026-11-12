@@ -249,12 +249,12 @@ document.addEventListener('DOMContentLoaded', () => {
         modeBtns.forEach(b => b.classList.toggle('active', b.dataset.mode === currentMode));
         if (currentMode === 'encrypt') {
             runBtn.textContent = 'Executar Transformação';
-            inputText.placeholder = 'Digite sua mensagem para cifrar...';
-            clockHint.textContent = 'Configure a palavra-chave e a posição do Sol para alinhar os discos.';
+            inputText.placeholder = 'Não olha pra ele.';
+            clockHint.textContent = 'Não olha pra ele.';
         } else {
             runBtn.textContent = 'Executar Decifração';
-            inputText.placeholder = 'Cole os símbolos solares ou clique neles no relógio...';
-            clockHint.textContent = 'Clique nos símbolos solares do disco externo para inseri-los na mensagem.';
+            inputText.placeholder = 'Não olha pra ele.';
+            clockHint.textContent = 'Não olha pra ele.';
         }
         renderDisks(keywordInput.value || 'SOL');
         updateInputSvgPreview();
